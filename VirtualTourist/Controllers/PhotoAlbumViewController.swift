@@ -69,7 +69,7 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate {
         
         let fr: NSFetchRequest<Photo> = Photo.fetchRequest()
         fr.sortDescriptors = []
-        fr.predicate = NSPredicate(format: "pin == %@", argumentArray: [pin])
+        fr.predicate = NSPredicate(format: "Pin == %@", argumentArray: [pin])
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fr, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
         var error: NSError?
@@ -119,7 +119,7 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate {
                 let managedObject = Photo(context: CoreData.shared.viewContext)
                 managedObject.photo = url
               //cause a problem
-                managedObject.photos = forPin
+                managedObject.pin = forPin
                 try? CoreData.shared.viewContext.save()
                 // images.flickrPhotos.append(url)
                 DispatchQueue.main.async {
@@ -135,7 +135,7 @@ extension PhotoAlbumViewController {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
-        let reuseId = "pin"
+        let reuseId = "Pin"
         
        
         

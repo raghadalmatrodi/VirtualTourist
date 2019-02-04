@@ -35,7 +35,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoViewCell" id="Hbh-wo-xJf" customClass="CollectionViewCell" customModule="VirtualTourist" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="Hbh-wo-xJf" customClass="CollectionViewCell" customModule="VirtualTourist" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -74,7 +74,7 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" id="3NZ-qC-7y4">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="D59-SU-SSa">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="D59-SU-SSa">
                                             <rect key="frame" x="16" y="7" width="343" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="New Collection"/>
@@ -177,7 +177,7 @@
                         <outlet property="mapView" destination="g7e-Kd-bpd" id="mjw-0F-rDH"/>
                         <outlet property="tapPinsLabel" destination="bor-eb-h4z" id="pnO-xQ-f9x"/>
                         <outlet property="topButton" destination="hEU-6I-xc1" id="Hpm-gE-jdn"/>
-                        <segue destination="7hL-fq-GgC" kind="push" id="orX-xV-5T6"/>
+                        <segue destination="7hL-fq-GgC" kind="show" id="8WV-yN-pCO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wt6-uD-zJy" sceneMemberID="firstResponder"/>
