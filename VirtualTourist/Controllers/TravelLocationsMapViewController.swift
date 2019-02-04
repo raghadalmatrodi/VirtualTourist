@@ -61,7 +61,7 @@ class  TravelLocationsMapViewController: UIViewController, CLLocationManagerDele
     func bringData() {
         
         let fetchRequest: NSFetchRequest<Pin> = Pin.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "lat", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "latitude", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
         fetchResultVC = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreData.shared.viewContext, sectionNameKeyPath: nil, cacheName: nil)

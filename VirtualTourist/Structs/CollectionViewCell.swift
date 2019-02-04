@@ -9,7 +9,7 @@
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
-    static let identifier = "imageViewCell"
+    static let identifier = "CollectionViewCell"
     
     var imageUrl: String = ""
     @IBOutlet weak var imageView: UIImageView!
