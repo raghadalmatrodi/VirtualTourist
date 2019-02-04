@@ -69,7 +69,7 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate {
         
         let fr: NSFetchRequest<Photo> = Photo.fetchRequest()
         fr.sortDescriptors = []
-        fr.predicate = NSPredicate(format: "Pin == %@", argumentArray: [pin])
+        fr.predicate = NSPredicate(format: "pin == %@", argumentArray: [pin])
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fr, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
         var error: NSError?
