@@ -129,6 +129,7 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate {
             
         }
     }
+
     
 }
 extension PhotoAlbumViewController {
@@ -218,7 +219,12 @@ extension PhotoAlbumViewController: UICollectionViewDataSource, UICollectionView
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return fetchedResultsController.sections?.count ?? 0
     }
-    
+    //--------------
+   /* func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedCell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
+        ImageManager.imageView.image = selectedCell.imageView.image
+    }*/
+    //----------------------
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let sectionInfo = self.fetchedResultsController.sections?[section] {
             return sectionInfo.numberOfObjects
@@ -246,6 +252,20 @@ extension PhotoAlbumViewController: UICollectionViewDataSource, UICollectionView
         let photoToDelete = fetchedResultsController.object(at: indexPath)
         dataController.viewContext.delete(photoToDelete)
         try? dataController.viewContext.save()
+        
+        
+        
+        let selectedCell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let imageManager = storyboard.instantiateViewController(withIdentifier: "ImageManager") as! ImageManager
+        imageManager.image = selectedCell.imageView.image!
+        navigationController?.pushViewController(imageManager, animated: true)
+        
+      // let selectedCell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
+       //     ImageManager().viewImage( imageN: selectedCell.imageView.image!)
+        
+        
+
     }
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying: UICollectionViewCell, forItemAt: IndexPath) {
